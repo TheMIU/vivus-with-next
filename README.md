@@ -2,7 +2,7 @@
 https://www.npmjs.com/package/react-vivus
 
 ```bash
-npm i react-vivus
+npm install vivus
 ```
 
 ### run

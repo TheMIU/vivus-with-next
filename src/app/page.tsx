@@ -1,4 +1,57 @@
+'use client'
+import { useEffect, useRef } from "react";
+import useOnScreen from "./components/useOnScreen";
+//@ts-ignore
+import Vivus from "vivus";
+
 export default function Home() {
+	// references for svgs
+	const svgRef1 = useRef<SVGSVGElement | null>(null);
+	const isVisibleSection_01 = useOnScreen(svgRef1);
+	const svgRef2 = useRef<SVGSVGElement | null>(null);
+	const isVisibleSection_02 = useOnScreen(svgRef2);
+	const svgRef3 = useRef<SVGSVGElement | null>(null);
+	const isVisibleSection_03 = useOnScreen(svgRef3);
+	const svgRef4 = useRef<SVGSVGElement | null>(null);
+	const isVisibleSection_04 = useOnScreen(svgRef4);
+
+	// useEffect to animations
+	useEffect(() => {
+		new Vivus(svgRef1.current, {
+			type: 'oneByOne',
+			duration: 2000,
+			start: 'autostart',
+			delay: 0,
+		});
+	}, [isVisibleSection_01]);
+
+	useEffect(() => {
+		new Vivus(svgRef2.current, {
+			type: 'oneByOne',
+			duration: 2000,
+			start: 'autostart',
+			delay: 0,
+		});
+	}, [isVisibleSection_02]);
+
+	useEffect(() => {
+		new Vivus(svgRef3.current, {
+			type: 'oneByOne',
+			duration: 2000,
+			start: 'autostart',
+			delay: 0,
+		});
+	}, [isVisibleSection_03]);
+
+	useEffect(() => {
+		new Vivus(svgRef4.current, {
+			type: 'oneByOne',
+			duration: 2000,
+			start: 'autostart',
+			delay: 0,
+		});
+	}, [isVisibleSection_04]);
+
 	return (
 		<>
 			<div style={{
@@ -16,7 +69,7 @@ export default function Home() {
 			</div >
 
 			{/* svg 1 */}
-			< svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+			< svg ref={svgRef1} version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 				// @ts-ignore
 				viewBox="0 0 1920 1080" style={{ enableBackground: "new 0 0 1920 1080" }
 				} xmlSpace="preserve" >
@@ -133,7 +186,7 @@ export default function Home() {
 			</svg >
 
 			{/* svg 2 */}
-			<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+			<svg  ref={svgRef2} version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 				// @ts-ignore
 				viewBox="0 0 1920 1080" style={{ enableBackground: "new 0 0 1920 1080" }} xmlSpace="preserve">
 				<style type="text/css">
@@ -213,7 +266,7 @@ export default function Home() {
 			</svg>
 
 			{/* svg 3 */}
-			<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+			<svg  ref={svgRef3} version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 				// @ts-ignore
 				viewBox="0 0 1920 1080" style={{ enableBackground: "new 0 0 1920 1080" }} xmlSpace="preserve">
 				<style type="text/css">
@@ -328,7 +381,7 @@ export default function Home() {
 			</svg>
 
 			{/* svg 4 */}
-			<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+			<svg  ref={svgRef4} version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 				// @ts-ignore
 				viewBox="0 0 1920 1080" style={{ enableBackground: "new 0 0 1920 1080" }} xmlSpace="preserve">
 				<style type="text/css">
