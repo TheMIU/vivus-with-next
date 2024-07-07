@@ -15,7 +15,8 @@ export default function Home() {
 	const svgRef4 = useRef<SVGSVGElement | null>(null);
 	const isVisibleSection_04 = useOnScreen(svgRef4);
 
-	// useEffect to animations
+	// useEffect to handle animations
+	// * add reference to svg!
 	useEffect(() => {
 		new Vivus(svgRef1.current, {
 			type: 'oneByOne',
